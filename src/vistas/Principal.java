@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
+import javax.swing.JMenuItem;
 
 public class Principal extends JFrame {
 
@@ -41,31 +42,43 @@ public class Principal extends JFrame {
 		panel.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Bienvenido " + user.getNombre());
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 66, 424, 21);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 18));
 		panel.add(lblNewLabel);
 
 		JButton ajustesButton = new JButton("Ajustes");
-		ajustesButton.setBackground(SystemColor.activeCaptionBorder);
 		ajustesButton.setBounds(332, 8, 82, 23);
+		ajustesButton.setBackground(SystemColor.activeCaptionBorder);
 		panel.add(ajustesButton);
 		
 		JButton btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
 		btnCerrarSesion.setBounds(10, 8, 123, 23);
 		panel.add(btnCerrarSesion);
 		btnCerrarSesion.setToolTipText("");
-		btnCerrarSesion.setBackground(SystemColor.activeCaptionBorder);
+		btnCerrarSesion.setBackground(Color.LIGHT_GRAY);
 		btnCerrarSesion.setForeground(SystemColor.desktop);
 		
-		JButton btnExplorar = new JButton("EXPLORAR");
-		btnExplorar.setBackground(SystemColor.info);
-		btnExplorar.setBounds(153, 115, 116, 79);
-		panel.add(btnExplorar);
+		JButton btnMapa = new JButton("Mapa");
+		btnMapa.setBounds(253, 130, 116, 45);
+		btnMapa.setBackground(Color.LIGHT_GRAY);
+		panel.add(btnMapa);
+		
+		JButton btnCasetas = new JButton("Casetas");
+		btnCasetas.setBackground(Color.LIGHT_GRAY);
+		btnCasetas.setBounds(61, 130, 116, 51);
+		panel.add(btnCasetas);
 
 		// Acciones
 		
-		btnExplorar.addActionListener(new ActionListener() {
+		btnCasetas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				new vistas.Listado(user);
+			}
+		});
+		
+		btnMapa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				new vistas.Mapa(user);
@@ -87,5 +100,4 @@ public class Principal extends JFrame {
 			}
 		});
 	}
-
 }

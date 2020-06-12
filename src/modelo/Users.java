@@ -11,14 +11,14 @@ public class Users {
 
 	public ArrayList<User> getAllUsers() {
 		ResultSet resultados = Conexion.EjecutarSentencia("SELECT * FROM user");
-		ArrayList<User> user = new controlador.Helper().ResultSet2ArrayList(resultados);
+		ArrayList<User> user = new controlador.Helper().setUserArrayList(resultados);
 		return user;
 	}
 
 	public User getUserByNameAndPass(String nombre, String password) {
 		ResultSet userBD = Conexion
 				.EjecutarSentencia("SELECT * FROM user WHERE nombre='" + nombre + "' AND PASSWORD='" + password + "'");
-		User user = new controlador.Helper().resultSet2Object(userBD);
+		User user = new controlador.Helper().setUserObject(userBD);
 		return user;
 	}
 
