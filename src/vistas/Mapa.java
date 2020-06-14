@@ -20,6 +20,7 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+import javax.swing.JSeparator;
 
 public class Mapa extends JFrame {
 

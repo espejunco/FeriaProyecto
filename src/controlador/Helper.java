@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import beans.User;
 import beans.Caseta;
+import beans.Opinion;
 
 public class Helper {
 
@@ -79,6 +80,38 @@ public class Helper {
 			}
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Error en la consulta de casetas");
+		}
+		return null;
+	}
+	
+	public ArrayList<Opinion> setOpinionArrayList(ResultSet resultados) {
+		// Ya tengo los datos de la BBDD
+		// Voy a transformarlos a objetos
+		ArrayList<Opinion> arraylist = new ArrayList<Opinion>();
+		try {
+			while (resultados.next()) {
+				String nombreUsuario = resultados.getString("nombre");
+				String txt = resultados.getString("txt");
+				
+				arraylist.add(new Opinion(nombreUsuario, txt));
+			}
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Error en la consulta de usuarios");
+		}
+
+		return arraylist;
+	}
+
+	public Opinion setOpinionObject(ResultSet resultado) {
+		try {
+			if (resultado.next()) {
+				String nombreUsuario = resultado.getString("nombre");
+				String txt = resultado.getString("txt");
+				Opinion opinion = new Opinion(nombreUsuario, txt);
+				return opinion;
+			}
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Error en la consulta de opiniones");
 		}
 		return null;
 	}
