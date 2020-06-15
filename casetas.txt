@@ -1,0 +1,10 @@
+1. Distrito Nervión- San Pablo || C/ Costillares || 22 || 648 || Abierta
+2. Distrito Casco Antiguo || C/ Antonio Bienvenida || 97 || 648 || Abierta
+3. Distrito Triana-Los Remedios ||  C/ Pascual Márquez || 153 || 648 || Cerrada
+4. Distrito Este || C/ Pascual Márquez || 215 || 648 || Cerrada
+5. Distrito Cerro-Amate || C/ Costillares || 82 || 648 || Abierta
+6. Distrito Macarena-Norte || C/ Pascual Márquez || 85 || 648 || Abierta
+7. Distrito Sur-Bellavista || C/ Ignacio Sánchez Mejías || 61 || 648 || Abierta
+8. Caseta Turística || C/ Pascual Márquez || 225 || 648 || Cerrada
+9. Área de Fiestas Mayores || C/ Costillares || 13 || 648 || Cerrada
+10. “La de to er mundo” || C/ Costillares || 77 || 648 || Cerrada
