@@ -14,6 +14,8 @@ import beans.User;
 import beans.Caseta;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +24,8 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
+
+import java.io.FileWriter;
 
 public class Listado extends JFrame {
 
@@ -107,6 +111,10 @@ public class Listado extends JFrame {
 		lblListadoDeCasetas.setFont(new Font("Arial", Font.BOLD, 15));
 		lblListadoDeCasetas.setBounds(10, 11, 231, 26);
 		panel.add(lblListadoDeCasetas);
+		
+		JButton btnFichero = new JButton("Fichero");
+		btnFichero.setBounds(190, 11, 89, 23);
+		panel.add(btnFichero);
 		/* Crear las columnas */
 		dtm.addColumn("Nombre");
 		dtm.addColumn("Calle");
@@ -137,6 +145,26 @@ public class Listado extends JFrame {
 		}
 
 		// Acciones
+		
+		btnFichero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FileWriter fichero = null;
+		        String linea = "";
+		        try {
+		            fichero = new FileWriter("casetas.txt");
+		            for (int i=0; i<casetas.size(); i++) {
+		                linea = (i+1)+". ";
+		                linea = linea + casetas.get(i).toString()+"\n";
+		                fichero.write(linea);
+		            }
+		            fichero.close();
+		            JOptionPane.showMessageDialog(null, "Fichero creado");
+		        } catch (Exception err) {
+		            System.out.println(err);
+		        }
+		        
+		    }
+		});
 
 		goBackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

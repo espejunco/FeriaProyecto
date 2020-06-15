@@ -47,7 +47,7 @@ public class CasetaVista extends JFrame {
 
 	public CasetaVista(User user, Caseta caseta, String vista) {
 		
-		//Generar Casetas
+		//Generar Opinionea
 		ArrayList<Opinion> opiniones =  new controlador.OpinionesControl().obtenerOpiniones(caseta.getId());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
